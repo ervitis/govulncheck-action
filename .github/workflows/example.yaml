@@ -1,0 +1,14 @@
+name: Go
+on: [push]
+
+jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+          with:
+            fetch-depth: 0
+            path: 'go/src/github.com/ervitis/nutrition-advisory/back'
+        - uses: ./
+          env:
+            GOPATH: '/home/runner/work/ervitis/go'
